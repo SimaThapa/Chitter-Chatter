@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BsSend } from "react-icons/bs";
 import useSendMessage from "../../hooks/useSendMessage";
 import EmojiPicker from 'emoji-picker-react';
@@ -8,7 +8,7 @@ const MessageInput = () => {
   const [showPicker, setShowPicker] = useState(false);
   const { loading, sendMessage } = useSendMessage();
 
-  const handleEmojiClick = (event, emojiObject) => {
+  const handleEmojiClick = (emojiObject) => {
     setMessage(prevMessage => prevMessage + emojiObject.emoji);
     setShowPicker(false);
   };
